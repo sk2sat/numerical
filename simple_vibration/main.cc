@@ -38,6 +38,7 @@ int main(int argc, char **argv){
 #ifdef USE_GNUPLOT
 			gp.command("plot '-' w l linewidth 3");
 			gp.command("0.0 0.0");
+			// ホントはこれはやるべきではない(sksat::math::gnuplot::gpは本来private member)
 			fprintf(gp.gp, "%f %f\n", x.get_x(), 0.0);
 			gp.command("e");
 #else
